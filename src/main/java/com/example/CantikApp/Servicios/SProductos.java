@@ -1,8 +1,8 @@
 
-package com.example.WafflyApi.Servicios;
+package com.example.CantikApp.Servicios;
 
-import com.example.WafflyApi.Entidades.Productos;
-import com.example.WafflyApi.Repositorios.RProductos;
+import com.example.CantikApp.Entidades.Productos;
+import com.example.CantikApp.Repositorios.RProductos;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
