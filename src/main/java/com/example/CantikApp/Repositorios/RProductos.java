@@ -1,7 +1,7 @@
 
-package com.example.WafflyApi.Repositorios;
+package com.example.CantikApp.Repositorios;
 
-import com.example.WafflyApi.Entidades.Productos;
+import com.example.CantikApp.Entidades.Productos;
 import java.util.ArrayList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
