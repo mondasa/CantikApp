@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface repServicio extends JpaRepository<lServicios, Integer>{
-    
+     public abstract ArrayList<lServicios> findByCategoria(String categoria);
 }
