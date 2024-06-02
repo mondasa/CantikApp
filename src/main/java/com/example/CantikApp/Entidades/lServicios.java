@@ -21,10 +21,10 @@ public class lServicios {
     @Column(length=50)
     private String descripcion;
 
-    public Productos() {
+    public lServicios() {
     }
 
-    public Productos(int idProd, String nombreProd, int precio, String categoria, String descripcion) {
+    public lServicios(int idProd, String nombreProd, int precio, String categoria, String descripcion) {
         this.idProd = idProd;
         this.nombreProd = nombreProd;
         this.precio = precio;
