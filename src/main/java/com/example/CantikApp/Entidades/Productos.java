@@ -1,5 +1,5 @@
 
-package com.example.WafflyApi.Entidades;
+package com.example.CantikApp.Entidades;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
