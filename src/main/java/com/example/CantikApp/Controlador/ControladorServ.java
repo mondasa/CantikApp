@@ -19,11 +19,11 @@ public class CProductos {
     @Autowired
    SProductos svProductos;
     @GetMapping("")
-public List<Productos> getRegistrosS(){
+public List<lServicios> getRegistrosS(){
 return svProductos.mtObtenerProductos();
         }
  @PostMapping("")
-    public List<Productos>postInsertarRegistro(@RequestBody Productos rp){
+    public List<lServicios>postInsertarRegistro(@RequestBody lServicios rp){
         if(svProductos.mtInsertarProducto(rp)){
             return svProductos.mtObtenerProductos();  
         }else{
@@ -31,12 +31,12 @@ return svProductos.mtObtenerProductos();
         }      
     }
     @PutMapping("")
-   public void putRegistro(@RequestBody Productos rcli ){
+   public void putRegistro(@RequestBody lServicios rcli ){
        svProductos.mtActualizarProducto(rcli);
    
    }
      @GetMapping("/{idP}")
-     public Productos obtServ(@PathVariable("idP")Integer idP){
+     public lServicios obtServ(@PathVariable("idP")Integer idP){
          return svProductos.mtObtenerProd(idP);
      }
      @DeleteMapping("/{idP}")
@@ -45,7 +45,7 @@ return svProductos.mtObtenerProductos();
         
     }
     @GetMapping("/query")
-    public ArrayList<Productos> mtFiltarC(@RequestParam("categoria") String categoria){
+    public ArrayList<lServicios> mtFiltarC(@RequestParam("categoria") String categoria){
         return svProductos.mtFiltarCat(categoria);
     
 }
