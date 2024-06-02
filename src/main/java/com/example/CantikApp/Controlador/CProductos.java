@@ -1,8 +1,8 @@
 
-package com.example.WafflyApi.Controlador;
+package com.example.CantikApp.Controlador;
 
-import com.example.WafflyApi.Entidades.Productos;
-import com.example.WafflyApi.Servicios.SProductos;
+import com.example.CantikApp.Entidades.Productos;
+import com.example.CantikApp.Servicios.SProductos;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
