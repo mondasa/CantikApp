@@ -14,37 +14,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/registrosServ")
-public class ControladorServ {
-@Autowired
-servLServicios svServicios;
-//Obtener los datos
-@GetMapping("")
-public List<lServicios> getRegistrosS(){
-return svServicios.mtObtenerRegistros();
+@RequestMapping("/Productos")
+public class CProductos {
+    @Autowired
+   SProductos svProductos;
+    @GetMapping("")
+public List<Productos> getRegistrosS(){
+return svProductos.mtObtenerProductos();
         }
  @PostMapping("")
-    public List<lServicios>postInsertarRegistro(@RequestBody lServicios rsv){
-        if(svServicios.mtInsertarRegistros(rsv)){
-            return svServicios.mtObtenerRegistros();  
+    public List<Productos>postInsertarRegistro(@RequestBody Productos rp){
+        if(svProductos.mtInsertarProducto(rp)){
+            return svProductos.mtObtenerProductos();  
         }else{
         return null; 
         }      
     }
     @PutMapping("")
-   public void putRegistro(@RequestBody lServicios rsv ){
-       svServicios.mtActualizarRegistros(rsv);
+   public void putRegistro(@RequestBody Productos rcli ){
+       svProductos.mtActualizarProducto(rcli);
    
    }
-     @GetMapping("/{nId}")
-     public lServicios obtServ(@PathVariable("nId")Integer nId){
-         return svServicios.mtObtenerUnServ(nId);
+     @GetMapping("/{idP}")
+     public Productos obtServ(@PathVariable("idP")Integer idP){
+         return svProductos.mtObtenerProd(idP);
      }
-     @DeleteMapping("/{nId}")
-    public void mEliminar(@PathVariable("nId")Integer nId){
-        svServicios.mtEliminar(nId);
+     @DeleteMapping("/{idP}")
+    public void mEliminar(@PathVariable("idP")Integer idP){
+        svProductos.mtEliminarProd(idP);
         
     }
+    @GetMapping("/query")
+    public ArrayList<Productos> mtFiltarC(@RequestParam("categoria") String categoria){
+        return svProductos.mtFiltarCat(categoria);
+    
+}
+    
 }
 
 
