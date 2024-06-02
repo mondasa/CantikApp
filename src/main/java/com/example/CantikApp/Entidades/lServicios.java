@@ -7,71 +7,103 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="productos")
+@Table(name="servicios")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class lServicios {
-     @Id
-    private int idProd;
+    @Id
+    private int nId;
     @Column(length=30)
-    private String nombreProd;
-    @Column(length=7)
-    private int precio;
-    @Column(length=20)
-    private String categoria;
-    @Column(length=50)
-    private String descripcion;
+    private String snombreserv;
+    private String scliente;
+    private String sdescserv;
+    private int ncosto;
+    private String sdireserv;
+    private String sfecha;
+    private String sestado;
+
+    public lServicios(int nId, String snombreserv, String scliente, String sdescserv, int ncosto, String sdireserv, String sfecha, String sestado) {
+        this.nId = nId;
+        this.snombreserv = snombreserv;
+        this.scliente = scliente;
+        this.sdescserv = sdescserv;
+        this.ncosto = ncosto;
+        this.sdireserv = sdireserv;
+        this.sfecha = sfecha;
+        this.sestado = sestado;
+    }
 
     public lServicios() {
     }
 
-    public lServicios(int idProd, String nombreProd, int precio, String categoria, String descripcion) {
-        this.idProd = idProd;
-        this.nombreProd = nombreProd;
-        this.precio = precio;
-        this.categoria = categoria;
-        this.descripcion = descripcion;
+    public int getnId() {
+        return nId;
     }
 
-    public int getIdProd() {
-        return idProd;
+    public void setnId(int nId) {
+        this.nId = nId;
     }
 
-    public void setIdProd(int idProd) {
-        this.idProd = idProd;
+    public String getSnombreserv() {
+        return snombreserv;
     }
 
-    public String getNombreProd() {
-        return nombreProd;
+    public void setSnombreserv(String snombreserv) {
+        this.snombreserv = snombreserv;
     }
 
-    public void setNombreProd(String nombreProd) {
-        this.nombreProd = nombreProd;
+    public String getScliente() {
+        return scliente;
     }
 
-    public int getPrecio() {
-        return precio;
+    public void setScliente(String scliente) {
+        this.scliente = scliente;
     }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
+    public String getSdescserv() {
+        return sdescserv;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public void setSdescserv(String sdescserv) {
+        this.sdescserv = sdescserv;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public int getNcosto() {
+        return ncosto;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public void setNcosto(int ncosto) {
+        this.ncosto = ncosto;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public String getSdireserv() {
+        return sdireserv;
     }
+
+    public void setSdireserv(String sdireserv) {
+        this.sdireserv = sdireserv;
+    }
+
+    public String getSfecha() {
+        return sfecha;
+    }
+
+    public void setSfecha(String sfecha) {
+        this.sfecha = sfecha;
+    }
+
+    public String getSestado() {
+        return sestado;
+    }
+
+    public void setSestado(String sestado) {
+        this.sestado = sestado;
+    }
+
     
     
     
 }
+    
+    
+    
+

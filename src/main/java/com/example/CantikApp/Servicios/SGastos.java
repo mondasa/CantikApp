@@ -2,14 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.WafflyApi.Servicios;
+package com.example.CantikApp.Servicios;
 
-import com.example.WafflyApi.Entidades.Gastos;
-import com.example.WafflyApi.Repositorios.gastos;
+import com.example.CantikApp.Entidades.Gastos;
+import com.example.CantikApp.Repositorios.gastos;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ *
+ * @author Monse
+ */
 @Service
 public class SGastos {
      @Autowired
@@ -49,3 +53,4 @@ public class SGastos {
         
     }
 }
+

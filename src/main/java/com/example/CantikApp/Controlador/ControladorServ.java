@@ -14,42 +14,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Productos")
-public class CProductos {
-    @Autowired
-   SProductos svProductos;
-    @GetMapping("")
+@RequestMapping("/registrosServ")
+public class ControladorServ {
+@Autowired
+servLServicios svServicios;
+//Obtener los datos
+@GetMapping("")
 public List<lServicios> getRegistrosS(){
-return svProductos.mtObtenerProductos();
+return svServicios.mtObtenerRegistros();
         }
  @PostMapping("")
-    public List<lServicios>postInsertarRegistro(@RequestBody lServicios rp){
-        if(svProductos.mtInsertarProducto(rp)){
-            return svProductos.mtObtenerProductos();  
+    public List<lServicios>postInsertarRegistro(@RequestBody lServicios rsv){
+        if(svServicios.mtInsertarRegistros(rsv)){
+            return svServicios.mtObtenerRegistros();  
         }else{
         return null; 
         }      
     }
     @PutMapping("")
-   public void putRegistro(@RequestBody lServicios rcli ){
-       svProductos.mtActualizarProducto(rcli);
+   public void putRegistro(@RequestBody lServicios rsv ){
+       svServicios.mtActualizarRegistros(rsv);
    
    }
-     @GetMapping("/{idP}")
-     public lServicios obtServ(@PathVariable("idP")Integer idP){
-         return svProductos.mtObtenerProd(idP);
+     @GetMapping("/{nId}")
+     public lServicios obtServ(@PathVariable("nId")Integer nId){
+         return svServicios.mtObtenerUnServ(nId);
      }
-     @DeleteMapping("/{idP}")
-    public void mEliminar(@PathVariable("idP")Integer idP){
-        svProductos.mtEliminarProd(idP);
+     @DeleteMapping("/{nId}")
+    public void mEliminar(@PathVariable("nId")Integer nId){
+        svServicios.mtEliminar(nId);
         
     }
-    @GetMapping("/query")
-    public ArrayList<lServicios> mtFiltarC(@RequestParam("categoria") String categoria){
-        return svProductos.mtFiltarCat(categoria);
-    
-}
-    
 }
 
 

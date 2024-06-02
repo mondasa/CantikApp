@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.WafflyApi.Controlador;
-import com.example.WafflyApi.Entidades.Inventario;
-import com.example.WafflyApi.Servicios.SInventario;
+package com.example.CantikApp.Controlador;
+
+import com.example.CantikApp.Entidades.Inventario;
+import com.example.CantikApp.Servicios.SInventario;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -50,3 +51,4 @@ return svInventario.mtObtenerProductos();
     }
     
 }
+
