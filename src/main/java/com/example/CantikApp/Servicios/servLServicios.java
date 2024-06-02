@@ -10,21 +10,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Service
-public class servLServicios {
-    @Autowired
-    repServicio rpServ;
+public class SProductos {
+     @Autowired
+    RProductos rProd;
+     //Listar los registros de mi tabla
     
-    //Listar los registros de mi tabla
-    
-    public List<lServicios> mtObtenerRegistros(){
-    return rpServ.findAll();
+    public List<Productos> mtObtenerProductos(){
+    return rProd.findAll();
     }
     
     //Insertar datos
-    public boolean mtInsertarRegistros(lServicios rsv){
+    public boolean mtInsertarProducto(Productos rp){
     boolean resp=false;
     try{
-        rpServ.save((rsv));
+        rProd.save((rp));
     }
     catch(Exception e){
         resp=false;  
@@ -33,21 +32,24 @@ public class servLServicios {
     }
     
     //Actualizar datos
-    public void mtActualizarRegistros(lServicios rsv) {
-        rpServ.save((rsv));
+    public void mtActualizarProducto(Productos rp) {
+        rProd.save((rp));
       
     }
     //Obtener un dato
     
-    public lServicios mtObtenerUnServ(Integer nId){
-        return rpServ.getOne(nId);
+    public Productos mtObtenerProd(Integer idP){
+        return rProd.getOne(idP);
         
     }
-    //Eliminar un estudiante
-    public void mtEliminar(Integer nId){
-        rpServ.deleteById(nId);
+    //Eliminar 
+    public void mtEliminarProd(Integer idP){
+        rProd.deleteById(idP);
         
     }
+    //FILTRAR POR CATEGORIA
+    public  ArrayList<Productos> mtFiltarCat(String categoria){
+    return rProd.findByCategoria(categoria);
+            }
     
-  
 }
